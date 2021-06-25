@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { HeaderVerticalComponent } from './header-vertical/header-vertical.component';
 import { SignupUserComponent } from './signup-user/signup-user.component';
 import { ConnectionComponent } from './connexion/connection.component';
@@ -12,12 +12,12 @@ import { OpenStreetMapComponent } from './open-street-map/open-street-map.compon
 import { HeaderHorizontalComponent } from './header-horizontal/header-horizontal.component';
 import { SignupProfessionalComponent } from './signup-professional/signup-professional.component';
 import { ConnexionProfessionalComponent } from './connexion-professional/connexion-professional.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BackUserComponent } from './back-user/back-user.component';
 import { HeaderHorizontalUserComponent } from './header-horizontal-user/header-horizontal-user.component';
 import { ProfessionalDashboardHomeComponent } from './professional-dashboard-home/professional-dashboard-home.component';
 import { HeaderHorizontalProfessionalComponent } from './header-horizontal-professional/header-horizontal-professional.component';
-import { ProfileReglageProfessionalComponent } from './profile-reglage-professional/profile-reglage-professional.component';
+import { ProfileReglageprofessionalComponent } from './profile-reglage-professional/profile-reglage-professional.component';
 import { FooterComponent } from './footer/footer.component';
 import { UserReservationsComponent } from './user-reservations/user-reservations.component';
 import { HistoriquePaymentUserComponent } from './historique-payment-user/historique-payment-user.component';
@@ -40,12 +40,22 @@ import { SoinHydratanComponent } from './soin-hydratan/soin-hydratan.component';
 import { MenageComponent } from './menage/menage.component';
 import { RepasageComponent } from './repasage/repasage.component';
 import { HeaderReservationComponent } from './header-reservation/header-reservation.component';
-import { ReservationCoupeHommeLieuxComponent } from './reservation-coupe-homme-lieux/reservation-coupe-homme-lieux.component';
 import { ReservationCoupeHommePrestationComponent } from './reservation-coupe-homme-prestation/reservation-coupe-homme-prestation.component';
 import { PrestationCoupeHommeComponent } from './prestation-coupe-homme/prestation-coupe-homme.component';
+import { ReservationAccepterComponent } from './reservation-accepter/reservation-accepter.component';
+import { FormulaireReservationCoupeHommeComponent } from './formulaire-reservation-coupe-homme/formulaire-reservation-coupe-homme.component';
+import { ProfesionalRendezVousComponent } from './profesional-rendez-vous/profesional-rendez-vous.component';
+import { HistoriqueProfessionelComponent } from './historique-professionel/historique-professionel.component';
+import { AddHoraireComponent } from './add-horaire/add-horaire.component';
+import { FormPrixPrestationComponent } from './form-prix-prestation/form-prix-prestation.component';
+import { PrixPrestationComponent } from './prix-prestation/prix-prestation.component';
+import { CarteUserComponent } from './carte-user/carte-user.component';
+
+
 
 @NgModule({
   declarations: [
+    ProfesionalRendezVousComponent,
     AppComponent,
     HeaderVerticalComponent,
     SignupUserComponent,
@@ -58,7 +68,7 @@ import { PrestationCoupeHommeComponent } from './prestation-coupe-homme/prestati
     HeaderHorizontalUserComponent,
     ProfessionalDashboardHomeComponent,
     HeaderHorizontalProfessionalComponent,
-    ProfileReglageProfessionalComponent,
+    ProfileReglageprofessionalComponent,
     FooterComponent,
     UserReservationsComponent,
     HistoriquePaymentUserComponent,
@@ -81,18 +91,29 @@ import { PrestationCoupeHommeComponent } from './prestation-coupe-homme/prestati
     MenageComponent,
     RepasageComponent,
     HeaderReservationComponent,
-    ReservationCoupeHommeLieuxComponent,
     ReservationCoupeHommePrestationComponent,
-    PrestationCoupeHommeComponent
+    PrestationCoupeHommeComponent,
+    ReservationAccepterComponent,
+    FormulaireReservationCoupeHommeComponent,
+    HistoriqueProfessionelComponent,
+    AddHoraireComponent,
+    FormPrixPrestationComponent,
+    PrixPrestationComponent,
+    CarteUserComponent
   ],
   imports: [
+    FormsModule,
+    ReactiveFormsModule,
     BrowserModule,
     FormsModule,
     AppRoutingModule,
     HttpClientModule,
     NgbModule,
   ],
-  providers: [],
+  providers: [
+    ConnexionProfessionalComponent,
+    ConnectionComponent
+  ],
   bootstrap: [AppComponent]
 }) 
 export class AppModule { }

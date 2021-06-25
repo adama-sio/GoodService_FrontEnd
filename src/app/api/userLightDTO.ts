@@ -1,4 +1,5 @@
-export class User {
+export interface UserLightDTO{
+
     id:number;
     nom:string;
     prenom:string;
@@ -7,7 +8,5 @@ export class User {
     adresse:string;
     code_postal:string;
     ville:string;
-    mdp:string;
-    constructor(){}
-}
 
+}

@@ -1,16 +1,14 @@
-export class Professional {
+export class User {
     id:number;
-    poste:string;
     nom:string;
     prenom:string;
-    date_naissance:Date;
-    siret:string;
+    numero:number;
+    email:string;
     adresse:string;
     code_postal:string;
     ville:string;
-    numero:number;
-    email:string;
     mdp:string;
+    token:string;
     constructor(){}
 }
 

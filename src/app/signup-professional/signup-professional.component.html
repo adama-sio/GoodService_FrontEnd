@@ -18,12 +18,12 @@
                         <article class="card-body">
                             <form #Registerform="ngForm" (ngSubmit)="registerProfessional()">
                                 <div class="form-group">
-                                    <select class="form-select" aria-label="Default select example" [(ngModel)]="professional.poste" [ngModelOptions]="{standalone: true}">
+                                    <select class="form-select" aria-label="Default select example" [(ngModel)]="professional.poste" [ngModelOptions]="{standalone: true} "> 
                                         <option selected>Postuler en tant que</option>
-                                        <option value=" 1 ">Coiffeur</option>
-                                        <option value="2 ">Estheticienne</option>
-                                        <option value="3 ">Aide menager</option>
-                                        <option value="4 ">Coach sportif</option>
+                                        <option value="Coiffeur">Coiffeur</option>
+                                        <option value="Estheticienne">Esthéticienne</option>
+                                        <option value="menager">Aide menager</option>
+                                        <option value="Coach">Coach sportif</option>
                                     </select>
                                 </div>
                                 <div class="form-row ">
@@ -46,17 +46,24 @@
                                     </div>
                                     <!-- form-group end.// -->
                                 </div>
-                                <!-- form-row end.// -->
-                                <div class="form-group ">
-                                    <input type="text " class="form-control " placeholder="Adresse " [(ngModel)]="professional.adresse " [ngModelOptions]="{standalone: true} ">
+                                <div class="form-row ">
+                                    <div class="col form-group ">
+                                        <input type="text" placeholder="Ville" class="form-control " [(ngModel)]="professional.ville" [ngModelOptions]="{standalone: true} ">
+                                    </div>
                                 </div>
+                                <!-- form-row end.// -->
                                 <div class="form-row ">
                                     <div class="form-group col-md-6 ">
-                                        <input type="text " placeholder="Ville " class="form-control " [(ngModel)]="professional.ville " [ngModelOptions]="{standalone: true} ">
+                                        <input type="text " placeholder="latitude " class="form-control " [(ngModel)]="professional.latitude" [ngModelOptions]="{standalone: true} ">
                                     </div>
                                     <div class="form-group col-md-6 ">
-                                        <input type="text " placeholder="Code postale " class="form-control " [(ngModel)]="professional.code_postal " [ngModelOptions]="{standalone: true} ">
+                                        <input type="text " placeholder="longitude " class="form-control " [(ngModel)]="professional.longitude" [ngModelOptions]="{standalone: true} ">
                                     </div>
+                                </div>
+                                <div class="coordonée">
+                                    <p class="coordonée">
+                                        Afin d'obtenir votre latitude et longitude cliquées <a href="https://www.coordonnees-gps.fr/" target="_blank">ici</a>
+                                    </p>
                                 </div>
                                 <div class="form-row ">
                                     <div class="form-group col-md-6 ">
@@ -76,7 +83,7 @@
                                 </div>
 
                                 <div class="form-group ">
-                                    <button type="submit " class="btn btn-primary btn-block btn-create-account "> M'INSCIRE EN TANT QUE PRO </button>
+                                    <button type="submit " class="btn btn-primary btn-block btn-create-account ">  M'INSCRIRE EN TANT QUE PRO </button>
                                 </div>
                             </form>
                         </article>
